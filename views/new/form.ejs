@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <form method="POST" action="/new">
+            <input type="text" name="name" placeholder="name" minlength="1" maxlength="20" required>
+            <input type="text" name="message" placeholder="message" minlength="1" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <%- include('../backButton'); %>
+    </body>
+</html>

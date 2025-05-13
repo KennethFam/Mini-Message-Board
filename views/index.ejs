@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <ul>
+            <% for (const message of messages) { %>
+                <li>
+                <%- include('message', {message: message, back: false}); %>
+                <form method="POST" action="/message">
+                    <input type ="hidden" name="message" value="<%= JSON.stringify(message) %>">
+                    <button type="submit">View Message</button>
+                </form>
+                </li>
+            <% } %>
+        </ul>
+
+        <form action="/new">
+            <button type="submit">New Message</button>
+        </form>
+    </body>
+</html>

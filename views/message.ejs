@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Message Details</title>
+    </head>
+    <body>
+        <p>Sender: <%= message.user %> | Message: <%= message.text %> | Date: <%= message.added %></p>
+        <% if (back) { %>
+            <%- include('backButton'); %>
+        <% } %>
+    </body>
+</html>
