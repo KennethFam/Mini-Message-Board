@@ -20,13 +20,11 @@ app.use("/*splat", (req, res, next) => {
     next(new Error("Page not found!"));
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is currently running on port ${PORT}.`);
-});
-
 app.use((err, req, res, next) => {
     console.log(err);
     res.status(404).send("Error 404: Page not found.");
 });
-  
-  
+
+app.listen(PORT, () => {
+    console.log(`Server is currently running on port ${PORT}.`);
+});
