@@ -17,6 +17,8 @@ app.use("/", indexRouter);
 app.use("/new", newRouter);
 app.use("/message", messageRouter);
 
-app.listen(PORT);
+app.listen(PORT, () => {
+    console.log(`Server is currently running on port ${PORT}.`);
+});
   
   
