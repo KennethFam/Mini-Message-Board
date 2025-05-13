@@ -16,8 +16,8 @@ messageRouter = require("./routes/message");
 app.use("/", indexRouter);
 app.use("/new", newRouter);
 app.use("/message", messageRouter);
-app.use(["/:file", "/new/:file", "/message/:file"], (req, res, next) => {
-    next(err);
+app.use("/*splat", (req, res, next) => {
+    next(new Error("Page not found!"));
 });
 
 app.listen(PORT, () => {
@@ -25,6 +25,7 @@ app.listen(PORT, () => {
 });
 
 app.use((err, req, res, next) => {
+    console.log(err);
     res.status(404).send("Error 404: Page not found.");
 });
   
