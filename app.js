@@ -16,7 +16,7 @@ messageRouter = require("./routes/message");
 app.use("/", indexRouter);
 app.use("/new", newRouter);
 app.use("/message", messageRouter);
-app.use("/*splat", (req, res, next) => {
+app.use((req, res, next) => {
     next(new Error("Page not found!"));
 });
 
