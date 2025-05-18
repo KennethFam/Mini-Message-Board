@@ -1,9 +1,5 @@
 const { Client } = require("pg");
 
-if (process.env.NODE_ENV !== "prod") {
-    require("dotenv").config();
-}
-
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
     text VARCHAR(255) NOT NULL,
