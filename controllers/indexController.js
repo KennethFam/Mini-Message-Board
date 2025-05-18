@@ -1,7 +1,9 @@
-messages = require("../models/db.js")
+const db = require("../models/queries.js")
 
 module.exports = {
-    get: (req, res) => {
+    get: async (req, res) => {
+        // remember to await async functions
+        const messages = await db.getAllMessages();
         res.render("../views/index", {title: "Mini Message Board", messages: messages});
     }
 }

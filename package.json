@@ -2,13 +2,17 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
   },
   "name": "mini-message-board",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "NODE_ENV=prod node ./models/createDB.js",
+    "start": "NODE_ENV=prod node app.js",
+    "dev": "NODE_ENV=dev node ./models/createDB.js && NODE_ENV=dev node app.js"
   },
   "repository": {
     "type": "git",

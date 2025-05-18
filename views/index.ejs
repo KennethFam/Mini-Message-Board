@@ -4,7 +4,7 @@
     </head>
     <body>
         <ul>
-            <% for (const message of messages) { %>
+            <% for (const message of Object.values(messages)) { %>
                 <li>
                 <%- include('message', {message: message, back: false}); %>
                 <form method="POST" action="/message">
