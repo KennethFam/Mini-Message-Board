@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS messages (
 
 async function main() {
     console.log("seeding...");
-    console.log(process.env.DATABASE_URL);
     const client = new Client( {
         connectionString: process.env.DATABASE_URL
     });
