@@ -1,4 +1,4 @@
-const db = require("../models/queries.js")
+const db = require("../db/queries.js");
 
 module.exports = {
     get: async (req, res) => {

@@ -10,9 +10,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "NODE_ENV=prod node ./models/createDB.js",
+    "prestart": "NODE_ENV=prod node ./db/populatedb.js",
     "start": "NODE_ENV=prod node app.js",
-    "dev": "NODE_ENV=dev node ./models/createDB.js && NODE_ENV=dev node app.js"
+    "dev": "NODE_ENV=dev node ./db/populatedb.js && NODE_ENV=dev node app.js"
   },
   "repository": {
     "type": "git",
